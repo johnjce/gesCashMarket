@@ -1,18 +1,20 @@
 <?php
-class Client extends MainEntity{
+class Customer extends MainEntity
+{
     private $id;
     private $dni;
     private $name;
+    private $email;
     private $lastname;
     private $address;
     private $telephone;
     private $imgDni;
-    
+
     public function __construct($adapter) {
-        $table="clientes";
+        $table = "clientes";
         parent::__construct($table, $adapter);
     }
-    
+
     public function getId() {
         return $this->id;
     }
@@ -20,7 +22,7 @@ class Client extends MainEntity{
     public function setId($id) {
         $this->id = $id;
     }
-    
+
     public function getDni() {
         return $this->dni;
     }
@@ -28,7 +30,7 @@ class Client extends MainEntity{
     public function setDni($dni) {
         $this->dni = $dni;
     }
-    
+
     public function getImgDni() {
         return $this->imgDni;
     }
@@ -36,13 +38,21 @@ class Client extends MainEntity{
     public function setImgDni($imgDni) {
         $this->imgDni = $imgDni;
     }
-    
+
     public function getName() {
         return $this->name;
     }
 
     public function setName($name) {
         $this->name = $name;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
     }
 
     public function getLastname() {
@@ -68,5 +78,5 @@ class Client extends MainEntity{
     public function setTelephone($telephone) {
         $this->telephone = $telephone;
     }
+
 }
-?>
