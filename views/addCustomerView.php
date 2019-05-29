@@ -1,8 +1,3 @@
-<?php
-include_once("baseTemplate/header.php");
-include_once("baseTemplate/leftBar.php");
-include_once("baseTemplate/topBar.php");
-?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Crear/Editar Cliente</h1>
@@ -107,4 +102,3 @@ include_once("baseTemplate/topBar.php");
     </form>
 </div>
 <script src="<?php echo SERVER_NAME ?>views/assets/js/script.js"></script>
-<?php include_once("baseTemplate/footer.php"); ?>

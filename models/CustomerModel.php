@@ -1,7 +1,8 @@
 <?php
-class CustomersModel extends MainModel{
+class CustomersModel extends MainModel {
+
     private $table;
-    
+
     public function __construct($adapter){
         $this->table="clientes";
         parent::__construct($this->table, $adapter);

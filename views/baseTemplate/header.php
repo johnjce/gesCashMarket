@@ -21,11 +21,6 @@
   <script src="<?php echo SERVER_NAME ?>views/assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo SERVER_NAME ?>views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo SERVER_NAME ?>views/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo SERVER_NAME ?>views/assets/js/sb-admin-2.js"></script>
 
 </head>
 

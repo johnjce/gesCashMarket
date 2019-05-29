@@ -1,6 +1,6 @@
 <?php
-class Customer extends MainEntity
-{
+class Customer extends MainEntity {
+    
     private $id;
     private $dni;
     private $name;
@@ -28,7 +28,7 @@ class Customer extends MainEntity
     }
 
     public function setDni($dni) {
-        $this->dni = $dni;
+        $this->dni = strtolower($dni);
     }
 
     public function getImgDni() {
@@ -44,7 +44,7 @@ class Customer extends MainEntity
     }
 
     public function setName($name) {
-        $this->name = $name;
+        $this->name = strtolower($name);
     }
 
     public function getEmail() {
@@ -52,7 +52,7 @@ class Customer extends MainEntity
     }
 
     public function setEmail($email) {
-        $this->email = $email;
+        $this->email = strtolower($email);
     }
 
     public function getLastname() {
@@ -60,7 +60,7 @@ class Customer extends MainEntity
     }
 
     public function setLastname($lastname) {
-        $this->lastname = $lastname;
+        $this->lastname = strtolower($lastname);
     }
 
     public function getAddress() {
@@ -68,7 +68,7 @@ class Customer extends MainEntity
     }
 
     public function setAddress($address) {
-        $this->address = $address;
+        $this->address = strtolower($address);
     }
 
     public function getTelephone() {

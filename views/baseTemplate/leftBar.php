@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SH Manager<sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3"><?php echo APP_TITLE ?><sup>2</sup></div>
       </a>
 
       <!-- Divider -->
@@ -42,6 +42,33 @@
         </div>
       </li>
 
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAgreements" aria-expanded="true" aria-controls="collapseAgreements">
+        <i class="fas fa-handshake"></i>
+          <span>Contratos</span>
+        </a>
+        <div id="collapseAgreements" class="collapse" aria-labelledby="collapseAgreements" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Nuevo:</h6>
+            <a class="collapse-item" href="<?php echo $helper->url("Purchase", "createPurchase"); ?>"><i class="fas fa-file-contract"></i> Nueva Compra</a>
+          </div>
+        </div>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseList" aria-expanded="true" aria-controls="collapseList">
+        <i class="fas fa-copy"></i>
+          <span>Listados</span>
+        </a>
+        <div id="collapseList" class="collapse" aria-labelledby="collapseList" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">listas:</h6>
+            <a class="collapse-item" href="<?php echo $helper->url("Customer", "SeeCustomers"); ?>"><i class="fas fa-copy"></i> Contratos de compras</a>
+          </div>
+        </div>
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -51,4 +78,4 @@
       </div>
 
     </ul>
-    <!-- End of Sidebar -->
+    <!-- End of Sidebar --> 

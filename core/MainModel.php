@@ -1,5 +1,5 @@
 <?php
-class MainModel extends MainEntity{
+class MainModel extends MainEntity {
     private $table;
     private $fluent;
     
@@ -13,7 +13,7 @@ class MainModel extends MainEntity{
         return $this->fluent;
     }
     
-    public function ejecutarSql($query){
+    public function executeSQL($query){
         $query=$this->fluent()->query($query);
         if($query==true){
             if($query->num_rows>1){
@@ -30,7 +30,6 @@ class MainModel extends MainEntity{
         }else{
             $resultSet=false;
         }
-        
         return $resultSet;
     }
 }

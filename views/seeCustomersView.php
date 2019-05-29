@@ -1,12 +1,5 @@
-<?php
-include_once("baseTemplate/header.php");
-?>
 <!-- Custom styles for this page -->
 <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
-<?php
-include_once("baseTemplate/leftBar.php");
-include_once("baseTemplate/topBar.php");
-?>
 
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -61,4 +54,3 @@ include_once("baseTemplate/topBar.php");
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<?php include_once("baseTemplate/footer.php"); ?>
