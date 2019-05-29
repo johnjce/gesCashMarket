@@ -24,5 +24,6 @@ class PurchaseController extends MainController{
         $product = new Product($this->adapter);
         echo "aqui pasa por lo menos";
         print_r($_REQUEST);
+        return true;
     }
 }

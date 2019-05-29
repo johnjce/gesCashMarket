@@ -114,7 +114,7 @@
             <div class="col-12 mb-3 col-sm-12 col-md-6 col-lg-6">
                 <div>
                     <button id="buttonAddProduct" class="btn btn-primary btn-lg" disabled>Agregar <i class="fas fa-shopping-cart"></i></button>
-                    <p id="state">Los campos marcados con (*) significan que son obligatorios.</p>
+                    <p id="message">Los campos marcados con (*) significan que son obligatorios.</p>
                 </div>
             </div>
             <div class="col-12 mb-3 col-sm-12 col-md-6 col-lg-6">
