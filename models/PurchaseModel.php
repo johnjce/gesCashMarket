@@ -14,9 +14,10 @@ class PurchaseModel extends MainModel {
     public function setProducts($products) {
         $query = "INSERT INTO lrvd (documentId, IDCL) VALUES ('$this->AgreementId', '1635')";
         $lastId = $this->executeSQL($query);
+        $query = "SELECT id FROM lrvd WHERE documentId='$this->AgreementId'";
+        $lastId = $this->executeSQL($query);
         $query = "INSERT INTO products (make, model, sn, type, pricePurchase, priceSale, stock, productState, state, idPurchase,currentAgreement)
                 VALUES";
-               
         foreach($products as $product){
             print_r($product);
             $query .="('{$product->getMake()}',
@@ -28,8 +29,8 @@ class PurchaseModel extends MainModel {
                        '{$product->getStock()}',
                        '{$product->getState()}',
                        '100',
-                       '538',
-                       '538'),"; 
+                       '{$lastId->id}',
+                       '{$lastId->id}'),"; 
         }
         $query = substr ($query, 0, strlen($query) - 1);
         return $product->db()->query($query);
