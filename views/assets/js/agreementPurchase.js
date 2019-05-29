@@ -78,7 +78,7 @@ document.querySelector("#buttonAddAgreement").addEventListener("click", function
     agreementPurchase.forEach(toString);
     postProducts=postProducts.substring(0,postProducts.length-1);
     postProducts+="}";
-    var posting = $.post("./index.php?controller=Purchase&action=addAgreement", postProducts);
+    var posting = $.post("./index.php?controller=Purchase&action=addAgreement", {"products":postProducts});
     posting.done(function (data) {
         agreementPurchase = new Map();
         postProducts ="{";

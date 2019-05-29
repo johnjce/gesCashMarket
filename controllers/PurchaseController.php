@@ -4,11 +4,13 @@ class PurchaseController extends MainController{
     public $adapter;
     public $productTypesEntity;
     public $productTypes;
+    public $products;
 	
     public function __construct() {
         parent::__construct();
         $this->connect=new connect();
         $this->adapter=$this->connect->connection();
+        $this->products = array();
     }
 
     public function createPurchase(){
@@ -21,9 +23,20 @@ class PurchaseController extends MainController{
 
     public function addAgreement(){
         $purchase = new PurchaseModel($this->adapter);
-        $product = new Product($this->adapter);
-        echo "aqui pasa por lo menos";
-        print_r($_REQUEST);
+        $postProducts = json_decode($_POST['products']);
+        foreach($postProducts as $postProduct){
+            $product = new Product($this->adapter);
+            $product->setMake($postProduct->make);
+            $product->setModel($postProduct->model);
+            $product->setSn($postProduct->sn);
+            $product->settype($postProduct->type);
+            $product->setPricePurchase($postProduct->pricePurchase);
+            $product->setPriceSale($postProduct->priceSale);
+            $product->setStock($postProduct->stock);
+            $product->setState($postProduct->state);
+            $products[]=$product;
+        }
+        $purchase->setProducts($products);
         return true;
     }
 }
