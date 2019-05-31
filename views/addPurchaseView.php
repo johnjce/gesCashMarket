@@ -19,7 +19,7 @@
                         </span>
                     </div>
                 </div>
-                <div id="clientsResult"></div>    
+                <div id="clientsResult"></div>
             </div>
         </div>
     </div>

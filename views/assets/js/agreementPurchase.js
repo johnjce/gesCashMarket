@@ -20,7 +20,7 @@ function checkInputNumber(idInput) {
     return checkInput(idInput) ? !patt.test($(idInput).val()) : false;
 }
 
-function delRow(idA,id) {
+function delRow(idA, id) {
     agreementPurchase.delete(id);
     tablePurchase.deleteRow(idA);
     agreementPurchase.size > 0 ? enableSubmit("#buttonAddAgreement") : disableSubmit("#buttonAddAgreement");
@@ -29,7 +29,6 @@ function delRow(idA,id) {
 document.querySelector("#buttonAddProduct").addEventListener("click", function () {
     event.preventDefault();
     enableSubmit("#buttonAddAgreement");
-
     var product = new Map();
     product.set("make", $("#make").val());
     product.set("model", $("#model").val());
@@ -48,7 +47,7 @@ document.querySelector("#buttonAddProduct").addEventListener("click", function (
     row.insertCell(2).innerHTML = $("#stock").val();
     row.insertCell(3).innerHTML = $("#pricePurchase").val() + "&euro;";
     row.insertCell(4).innerHTML = $("#stock").val() * $("#pricePurchase").val() + "&euro;";
-    row.insertCell(5).innerHTML = "<button type=\"button\" class=\"btn btn-success\" onclick=\"delRow(this.parentNode.parentNode.rowIndex, "+i+")\"><i class=\"far fa-trash-alt\"></i></button>";
+    row.insertCell(5).innerHTML = "<button type=\"button\" class=\"btn btn-success\" onclick=\"delRow(this.parentNode.parentNode.rowIndex, " + i + ")\"><i class=\"far fa-trash-alt\"></i></button>";
     i++;
 
     $("#make").val("");
@@ -61,12 +60,12 @@ document.querySelector("#buttonAddProduct").addEventListener("click", function (
     disableSubmit("#buttonAddProduct");
 });
 
-var postProducts="{";
+var postProducts = "{";
 function toString(value, key, map) {
     tablePurchase.deleteRow(1);
-    postProducts += "\""+key+"\":{";
+    postProducts += "\"" + key + "\":{";
     value.forEach(sendProducts);
-    postProducts=postProducts.substring(0,postProducts.length-1);
+    postProducts = postProducts.substring(0, postProducts.length - 1);
     postProducts += "},";
 }
 
@@ -77,13 +76,14 @@ function sendProducts(value, key, map) {
 document.querySelector("#buttonAddAgreement").addEventListener("click", function () {
     event.preventDefault();
     agreementPurchase.forEach(toString);
-    postProducts=postProducts.substring(0,postProducts.length-1);
-    postProducts+="}";
-    console.log(postProducts);
-    var posting = $.post("./index.php?controller=Purchase&action=addAgreement", {"products":postProducts});
+    postProducts = postProducts.substring(0, postProducts.length - 1);
+    postProducts += "}";
+    var posting = $.post("./index.php?controller=Purchase&action=addAgreement", { "products": postProducts, "IDCL": $("#IDCL").val() });
     posting.done(function (data) {
+        $("#inputSearch").val("");
+        document.querySelector('#clientsResult').innerHTML = "";
         agreementPurchase = new Map();
-        postProducts ="{";
+        postProducts = "{";
         disableSubmit("#buttonAddAgreement")
         document.querySelector('#message').innerHTML = `Guardado con éxito.`;
     });

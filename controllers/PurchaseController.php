@@ -36,7 +36,7 @@ class PurchaseController extends MainController{
             $product->setState($postProduct->state);
             $products[]=$product;
         }
-        $purchase->setProducts($products);
+        $purchase->setProducts($products,$_POST['IDCL']);
         return true;
     }
 }

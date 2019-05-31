@@ -11,8 +11,8 @@ class PurchaseModel extends MainModel {
         $this->AgreementId = substr(str_shuffle($permitted_chars), 0, 10);
     }
 
-    public function setProducts($products) {
-        $query = "INSERT INTO lrvd (documentId, IDCL) VALUES ('$this->AgreementId', '1635')";
+    public function setProducts($products, $IDCL) {
+        $query = "INSERT INTO lrvd (documentId, IDCL) VALUES ('$this->AgreementId', $IDCL)";
         $lastId = $this->executeSQL($query);
         $query = "SELECT id FROM lrvd WHERE documentId='$this->AgreementId'";
         $lastId = $this->executeSQL($query);
