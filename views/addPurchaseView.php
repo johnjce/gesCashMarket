@@ -2,8 +2,31 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Contrato de compra</h1>
     </div>
+    <div class="row">
+        <!-- Carrito de compra -->
+        <div class="col mb-0">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Cliente</h6>
+            </div>
+            <div class="card-body">
+                <div id="client-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" id="inputSearch" class="search-query form-control" placeholder="Buscar Cliente" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div id="clientsResult"></div>    
+            </div>
+        </div>
+    </div>
+
+
     <form id="addProductForm" name="addProductForm" action="./<?php echo $helper->url("Purchase", "save"); ?>" enctype="multipart/form-data">
-        <div class="row">
+    <div class="row">
             <div class="col-12 mb-3 col-sm-12 col-md-12 col-lg-6">
                 <label for="make">Marca (*)</label>
                 <div class="input-group">
@@ -153,3 +176,4 @@
     </div>
 </div>
 <script src="<?php echo SERVER_NAME ?>views/assets/js/agreementPurchase.js"></script>
+<script src="<?php echo SERVER_NAME ?>views/assets/js/clientSearch.js"></script>

@@ -37,5 +37,17 @@ class CustomersModel extends MainModel {
                 IDCL = '{$customer->getId()}';";
         return $customer->db()->query($query);
     }
+
+    public function search($value){
+        $query = "SELECT IDCL, nombres, apellidos, dni 
+                    FROM clientes 
+                    WHERE nombres LIKE '%$value%' OR
+                    apellidos LIKE '%$value%' OR
+                    dni LIKE '%$value%' OR
+                    domicilio LIKE '%$value%' OR
+                    email LIKE '%$value%' OR
+                    telefono LIKE '%$value%'";
+        return $this->executeSQL($query);
+    }
 }
 ?>

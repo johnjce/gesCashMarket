@@ -81,4 +81,10 @@ class CustomerController extends MainController{
         ));
     }
 
+    public function search(){
+        $customers=new CustomersModel($this->adapter);
+        $customerResult = $customers->search($_POST['value']);
+        echo json_encode($customerResult);
+    }
+
 }

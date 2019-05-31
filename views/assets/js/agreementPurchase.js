@@ -60,6 +60,7 @@ document.querySelector("#buttonAddProduct").addEventListener("click", function (
 
     disableSubmit("#buttonAddProduct");
 });
+
 var postProducts="{";
 function toString(value, key, map) {
     tablePurchase.deleteRow(1);
@@ -78,6 +79,7 @@ document.querySelector("#buttonAddAgreement").addEventListener("click", function
     agreementPurchase.forEach(toString);
     postProducts=postProducts.substring(0,postProducts.length-1);
     postProducts+="}";
+    console.log(postProducts);
     var posting = $.post("./index.php?controller=Purchase&action=addAgreement", {"products":postProducts});
     posting.done(function (data) {
         agreementPurchase = new Map();

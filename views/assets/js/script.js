@@ -140,6 +140,13 @@ function checkInput(idInput) {
                         "img_dni": encodeURIComponent(dniPicture)
                     });
                     posting.done(function (data) {
+                        $("#IDCL").val("");
+                        $("#nombres").val("");
+                        $("#apellidos").val("");
+                        $("#dni").val("");
+                        $("#telefono").val("");
+                        $("#domicilio").val("");
+                        $("#email").val("");
                         $state.innerHTML = `Guardado con éxito.`;
                     });
                     posting.fail(function (data) {
