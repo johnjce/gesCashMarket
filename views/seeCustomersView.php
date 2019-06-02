@@ -25,7 +25,7 @@
                     <tbody>
                         <?php foreach ($allcustomers as $customer) { ?>
                             <tr>
-                                <td><?php echo ucwords($customer->nombres); ?> <?php echo ucwords($customer->apellidos); ?> <?php echo ucwords($customer->ape2); ?></td>
+                                <td><?php echo ucwords($customer->nombres); ?> <?php echo ucwords($customer->apellidos); ?> </td>
                                 <td><?php echo ucwords($customer->domicilio); ?></td>
                                 <td><?php echo $customer->telefono; ?></td>
                                 <td><?php echo strtoupper($customer->dni); ?></td>
