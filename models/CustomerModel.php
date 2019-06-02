@@ -4,13 +4,13 @@ class CustomersModel extends MainModel {
     private $table;
 
     public function __construct($adapter){
-        $this->table="clientes";
+        $this->table="customers";
         parent::__construct($this->table, $adapter);
     }
 
     public function addCustomer($customer){
         $imgDni = urldecode ($customer->getImgDni());
-        $query = "INSERT INTO `clientes` (dni,nombres,apellidos,domicilio,telefono,email,img_dni)
+        $query = "INSERT INTO `customers` (dni,names,lastname,address,telephone,email,img_dni)
                 VALUES(
                        '{$customer->getDni()}',
                        '{$customer->getName()}',
@@ -24,13 +24,13 @@ class CustomersModel extends MainModel {
 
     public function updateCustomer($customer){
         $imgDni = urldecode ($customer->getImgDni());
-        $query = "UPDATE `clientes` 
+        $query = "UPDATE `customers` 
                 SET
                 dni = '{$customer->getDni()}',
-                nombres = '{$customer->getName()}',
-                apellidos = '{$customer->getLastname()}',
-                domicilio = '{$customer->getAddress()}',
-                telefono = '{$customer->getTelephone()}',
+                names = '{$customer->getName()}',
+                lastname = '{$customer->getLastname()}',
+                address = '{$customer->getAddress()}',
+                telephone = '{$customer->getTelephone()}',
                 email = '{$customer->getEmail()}',
                 img_dni = '{$imgDni}'
                 WHERE
@@ -39,14 +39,14 @@ class CustomersModel extends MainModel {
     }
 
     public function search($value){
-        $query = "SELECT IDCL, nombres, apellidos, dni 
-                    FROM clientes 
-                    WHERE nombres LIKE '%$value%' OR
-                    apellidos LIKE '%$value%' OR
+        $query = "SELECT IDCL, names, lastname, dni 
+                    FROM customers 
+                    WHERE names LIKE '%$value%' OR
+                    lastname LIKE '%$value%' OR
                     dni LIKE '%$value%' OR
-                    domicilio LIKE '%$value%' OR
+                    address LIKE '%$value%' OR
                     email LIKE '%$value%' OR
-                    telefono LIKE '%$value%'";
+                    telephone LIKE '%$value%'";
         return $this->executeSQL($query);
     }
 }

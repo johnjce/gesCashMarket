@@ -105,11 +105,11 @@ function checkInput(idInput) {
                 $video.play();
                 
                 $("#addCustomerForm *").on("change keydown", function () {
-                    if (checkInput("#nombres") &&
-                        checkInput("#apellidos") &&
+                    if (checkInput("#names") &&
+                        checkInput("#lastname") &&
                         checkInput("#dni") &&
-                        checkInput("#telefono") &&
-                        checkInput("#domicilio")) {
+                        checkInput("#telephone") &&
+                        checkInput("#address")) {
                         enableSubmit();
                     } else {
                         disableSubmit();
@@ -131,21 +131,21 @@ function checkInput(idInput) {
                     if($("#email").val() != "") email = $("#email").val();
                     var posting = $.post("./index.php?controller=Customer&action=save", {
                         "id": $("#IDCL").val(),
-                        "nombres": $("#nombres").val(),
-                        "apellidos": $("#apellidos").val(),
+                        "names": $("#names").val(),
+                        "lastname": $("#lastname").val(),
                         "dni": $("#dni").val(),
-                        "telefono": $("#telefono").val(),
-                        "domicilio": $("#domicilio").val(),
+                        "telephone": $("#telephone").val(),
+                        "address": $("#address").val(),
                         "email": email,
                         "img_dni": encodeURIComponent(dniPicture)
                     });
                     posting.done(function (data) {
                         $("#IDCL").val("");
-                        $("#nombres").val("");
-                        $("#apellidos").val("");
+                        $("#names").val("");
+                        $("#lastname").val("");
                         $("#dni").val("");
-                        $("#telefono").val("");
-                        $("#domicilio").val("");
+                        $("#telephone").val("");
+                        $("#address").val("");
                         $("#email").val("");
                         $state.innerHTML = `Guardado con éxito.`;
                     });

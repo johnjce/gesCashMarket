@@ -22,10 +22,10 @@ class CustomerController extends MainController{
         $customers=new CustomersModel($this->adapter);
         $customer=new Customer($this->adapter);
         $customer->setDni($_POST['dni']);
-        $customer->setName($_POST['nombres']);
-        $customer->setLastname($_POST['apellidos']);
-        $customer->setAddress($_POST['domicilio']);
-        $customer->setTelephone($_POST['telefono']);
+        $customer->setName($_POST['names']);
+        $customer->setLastname($_POST['lastname']);
+        $customer->setAddress($_POST['address']);
+        $customer->setTelephone($_POST['telephone']);
         $customer->setEmail($_POST['email']);
         $customer->setDni($_POST['dni']);
         $customer->setImgDni($_POST['img_dni']);

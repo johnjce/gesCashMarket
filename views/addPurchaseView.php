@@ -9,7 +9,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Cliente</h6>
             </div>
             <div class="card-body">
-                <div id="client-search-input">
+                <div id="customer-search-input">
                     <div class="input-group col-md-12">
                         <input type="text" id="inputSearch" class="search-query form-control" placeholder="Buscar Cliente" />
                         <span class="input-group-btn">
@@ -19,7 +19,7 @@
                         </span>
                     </div>
                 </div>
-                <div id="clientsResult"></div>
+                <div id="customersResult"></div>
             </div>
         </div>
     </div>
@@ -176,4 +176,4 @@
     </div>
 </div>
 <script src="<?php echo SERVER_NAME ?>views/assets/js/agreementPurchase.js"></script>
-<script src="<?php echo SERVER_NAME ?>views/assets/js/clientSearch.js"></script>
+<script src="<?php echo SERVER_NAME ?>views/assets/js/customerSearch.js"></script>

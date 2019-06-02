@@ -81,7 +81,7 @@ document.querySelector("#buttonAddAgreement").addEventListener("click", function
     var posting = $.post("./index.php?controller=Purchase&action=addAgreement", { "products": postProducts, "IDCL": $("#IDCL").val() });
     posting.done(function (data) {
         $("#inputSearch").val("");
-        document.querySelector('#clientsResult').innerHTML = "";
+        document.querySelector('#customersResult').innerHTML = "";
         agreementPurchase = new Map();
         postProducts = "{";
         disableSubmit("#buttonAddAgreement")

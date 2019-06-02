@@ -16,7 +16,7 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Domicilio</th>
-                            <th>telefono</th>
+                            <th>Telefono</th>
                             <th>DNI</th>
                             <th>Foto DNI</th>
                             <th>Acciones</th>
@@ -25,9 +25,9 @@
                     <tbody>
                         <?php foreach ($allcustomers as $customer) { ?>
                             <tr>
-                                <td><?php echo ucwords($customer->nombres); ?> <?php echo ucwords($customer->apellidos); ?> </td>
-                                <td><?php echo ucwords($customer->domicilio); ?></td>
-                                <td><?php echo $customer->telefono; ?></td>
+                                <td><?php echo ucwords($customer->names); ?> <?php echo ucwords($customer->lastname); ?> </td>
+                                <td><?php echo ucwords($customer->address); ?></td>
+                                <td><?php echo $customer->telephone; ?></td>
                                 <td><?php echo strtoupper($customer->dni); ?></td>
                                 <td><img src="<?php echo $customer->img_dni; ?>" height="100px" height="50px"/></td>
                                 <td>

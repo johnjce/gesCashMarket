@@ -11,7 +11,7 @@ class Customer extends MainEntity {
     private $imgDni;
 
     public function __construct($adapter) {
-        $table = "clientes";
+        $table = "customers";
         parent::__construct($table, $adapter);
     }
 

@@ -37,9 +37,9 @@ class PurchaseModel extends MainModel {
     }
 
     public function getAllPurchases(){
-        $query = "SELECT clientes.IDCL, clientes.nombres, clientes.apellidos, clientes.telefono, clientes.dni, lrvd.id, lrvd.date
-                    FROM lrvd, clientes 
-                    WHERE clientes.IDCL = lrvd.IDCL";
+        $query = "SELECT customers.IDCL, customers.names, customers.lastname, customers.telephone, customers.dni, lrvd.id, lrvd.date
+                    FROM lrvd, customers 
+                    WHERE customers.IDCL = lrvd.IDCL";
         return $this->executeSQL($query);
     }
 

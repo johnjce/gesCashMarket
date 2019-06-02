@@ -24,7 +24,7 @@
                         foreach ($allPurchases as $purchase) { ?>
                             <tr>
                                 <td>
-                                    <?php echo ucwords($purchase->nombres); ?> <?php echo ucwords($purchase->apellidos); ?> -
+                                    <?php echo ucwords($purchase->names); ?> <?php echo ucwords($purchase->lastname); ?> -
                                     <?php echo strtoupper($purchase->dni); ?>
                                     <a href="<?php echo $helper->url("Customer", "updateCustomer"); ?>&id=<?php echo $purchase->IDCL; ?>" class="primary"><i class="fas fa-eye"></i></a>
                                 </td>

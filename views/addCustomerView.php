@@ -7,28 +7,28 @@
     <form id="addCustomerForm" action="./<?php echo $helper->url("Customer", "save"); ?>" enctype="multipart/form-data">
         <div class="row">
             <div class="col mb-3">
-                <label for="nombres">Nombres (*)</label>
+                <label for="names">Nombres (*)</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-signature"></i></span>
                     </div>
-                    <input type="text" name="nombres" id="nombres" value="<?php echo $customer->nombres; ?>" class="form-control" placeholder="Nombres" required="">
+                    <input type="text" name="names" value="<?php echo $customer->names; ?>" id="names" class="form-control" placeholder="Nombres" required="">
                     <div class="invalid-feedback" style="width: 100%;">
-                        Nombre requerido.
+                        Nombres requerido.
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col mb-3">
-                <label for="apellidos">Apellidos (*)</label>
+                <label for="lastname">Apellidos (*)</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-signature"></i></span>
                     </div>
-                    <input type="text" name="apellidos" value="<?php echo $customer->apellidos; ?>" id="apellidos" class="form-control" placeholder="Apellidos" required="">
+                    <input type="text" name="lastname" id="lastname" value="<?php echo $customer->lastname; ?>" class="form-control" placeholder="Apellidos" required="">
                     <div class="invalid-feedback" style="width: 100%;">
-                        Apellido requerido.
+                        Apellidos requerido.
                     </div>
                 </div>
             </div>
@@ -49,12 +49,12 @@
         </div>
         <div class="row">
             <div class="col mb-3">
-                <label for="telefono">Telefono (*)</label>
+                <label for="telephone">Telefono (*)</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                     </div>
-                    <input type="tel" name="telefono" id="telefono" value="<?php echo $customer->telefono; ?>" class="form-control" data-format="+34 ddd dd-dd-dd" placeholder="684000000" required="">
+                    <input type="tel" name="telephone" id="telephone" value="<?php echo $customer->telephone; ?>" class="form-control" data-format="+34 ddd dd-dd-dd" placeholder="684000000" required="">
                     <div class="invalid-feedback" style="width: 100%;">
                         Telefono requerido.
                     </div>
@@ -63,12 +63,12 @@
         </div>
         <div class="row">
             <div class="col mb-3">
-                <label for="domicilio">Domicilio (*)</label>
+                <label for="address">Domicilio (*)</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-home"></i></span>
                     </div>
-                    <input type="text" name="domicilio" id="domicilio" value="<?php echo $customer->domicilio; ?>" class="form-control" placeholder="Domicilio" required="">
+                    <input type="text" name="address" id="address" value="<?php echo $customer->address; ?>" class="form-control" placeholder="Domicilio" required="">
                     <div class="invalid-feedback" style="width: 100%;">
                         Domicilio requerido.
                     </div>
@@ -95,10 +95,10 @@
                     <select name="deviceList" id="deviceList"></select>
                     <button id="buttonCapture" class="btn btn-primary btn-lg ligth-text" disabled>Guardar <i class="far fa-save"></i></button>
                     <p id="state">Los campos marcados con (*) significan que son obligatorios.</p>
-                    <input type="hidden" value="<?php echo $_GET['id']; ?>" name="IDCL" id="IDCL" />
+                    <input type="hidden" value="<?php echo @$_GET['id']!=null ? $_GET['id']:""; ?>" name="IDCL" id="IDCL" />
                 </div>
             </div>
         </div>
     </form>
 </div>
-<script src="<?php echo SERVER_NAME ?>views/assets/js/script.js"></script>
+<script src="<?php echo SERVER_NAME ?>views/assets/js/customer.js"></script>
