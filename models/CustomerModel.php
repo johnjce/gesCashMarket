@@ -10,7 +10,9 @@ class CustomersModel extends MainModel {
 
     public function addCustomer($customer){
         $imgDni = urldecode ($customer->getImgDni());
-        $query = "INSERT INTO `customers` (dni,names,lastname,address,telephone,email,img_dni)
+        $signaturePicture = urldecode ($customer->getSignaturePicture());
+
+        $query = "INSERT INTO `customers` (dni,names,lastname,address,telephone,email,img_dni,signaturePicture)
                 VALUES(
                        '{$customer->getDni()}',
                        '{$customer->getName()}',
@@ -18,7 +20,8 @@ class CustomersModel extends MainModel {
                        '{$customer->getAddress()}',
                        '{$customer->getTelephone()}',
                        '{$customer->getEmail()}',
-                       '{$imgDni}');";
+                       '{$imgDni}',
+                       '{$signaturePicture}');";
         return $customer->db()->query($query);
     }
 

@@ -9,6 +9,7 @@ class Customer extends MainEntity {
     private $address;
     private $telephone;
     private $imgDni;
+    private $signaturePicture;
 
     public function __construct($adapter) {
         $table = "customers";
@@ -37,6 +38,14 @@ class Customer extends MainEntity {
 
     public function setImgDni($imgDni) {
         $this->imgDni = $imgDni;
+    }
+
+    public function getSignaturePicture() {
+        return $this->signaturePicture;
+    }
+
+    public function setSignaturePicture($signaturePicture) {
+        $this->signaturePicture = $signaturePicture;
     }
 
     public function getName() {

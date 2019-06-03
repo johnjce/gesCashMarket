@@ -87,18 +87,39 @@
             </div>
         </div>
         <div class="row">
-            <br>
-            <video muted="muted" id="video"></video>
-            <canvas id="canvas" style="display: none;"></canvas>
             <div class="col mb-3">
                 <div>
-                    <select name="deviceList" id="deviceList"></select>
                     <button id="buttonCapture" class="btn btn-primary btn-lg ligth-text" disabled>Guardar <i class="far fa-save"></i></button>
                     <p id="state">Los campos marcados con (*) significan que son obligatorios.</p>
-                    <input type="hidden" value="<?php echo @$_GET['id']!=null ? $_GET['id']:""; ?>" name="IDCL" id="IDCL" />
+                    <input type="hidden" value="<?php echo @$_GET['id'] != null ? $_GET['id'] : ""; ?>" name="IDCL" id="IDCL" />
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <video muted="muted" id="video"></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+                <canvas id="signaturePictureCanvas" width="400" height="200" style="border:2px solid black"></canvas>
+                <br />
+                <select name="deviceList" id="deviceList"></select>
+                Line width : <select id="selWidth">
+                    <option value="1" selected="selected">1</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                </select>
+                Color : <select id="selColor">
+                    <option value="black">Negro</option>
+                    <option value="gray">Gris</option>
+                    <option value="blue" selected="selected">Azul</option>
+                </select>
+                <br /><br />
+                <button onclick="javascript:clearArea();return false;">Borrar firma</button>
             </div>
         </div>
     </form>
 </div>
-<script src="<?php echo SERVER_NAME ?>views/assets/js/customer.js"></script>
+<script type="text/javascript" src="<?php echo SERVER_NAME ?>views/assets/js/signature.js"></script>
+<script>
+    InitThis();
+</script>
+<script type="text/javascript" src="<?php echo SERVER_NAME ?>views/assets/js/customer.js"></script>

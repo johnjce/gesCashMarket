@@ -29,6 +29,7 @@ class CustomerController extends MainController{
         $customer->setEmail($_POST['email']);
         $customer->setDni($_POST['dni']);
         $customer->setImgDni($_POST['img_dni']);
+        $customer->setSignaturePicture($_POST['signaturePicture']);
         if(!isset($_POST["id"]) || $_POST["id"] == "")
             return $customers->addCustomer($customer);
         else {

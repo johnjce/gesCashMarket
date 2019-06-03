@@ -8,6 +8,7 @@ function _getUserMedia() {
 
 const $video = document.querySelector("#video"),
     $canvas = document.querySelector("#canvas"),
+    $signaturePictureCanvas = document.querySelector("#signaturePictureCanvas"),
     $buttonCapture = document.querySelector("#buttonCapture"),
     $state = document.querySelector("#state"),
     $deviceList = document.querySelector("#deviceList");
@@ -123,8 +124,8 @@ function checkInput(idInput) {
                     $canvas.width = $video.videoWidth;
                     $canvas.height = $video.videoHeight;
                     contexto.drawImage($video, 0, 0, $canvas.width, $canvas.height);
-
                     let dniPicture = $canvas.toDataURL();
+                    let signaturePicture = $signaturePictureCanvas.toDataURL();
 
                     $state.innerHTML = "Guardando. Por favor, espera...";
                     var email = "Sin email";
@@ -137,7 +138,8 @@ function checkInput(idInput) {
                         "telephone": $("#telephone").val(),
                         "address": $("#address").val(),
                         "email": email,
-                        "img_dni": encodeURIComponent(dniPicture)
+                        "img_dni": encodeURIComponent(dniPicture),
+                        "signaturePicture": encodeURIComponent(signaturePicture)
                     });
                     posting.done(function (data) {
                         $("#IDCL").val("");
@@ -147,6 +149,7 @@ function checkInput(idInput) {
                         $("#telephone").val("");
                         $("#address").val("");
                         $("#email").val("");
+                        clearArea();
                         $state.innerHTML = `Guardado con éxito.`;
                     });
                     posting.fail(function (data) {
