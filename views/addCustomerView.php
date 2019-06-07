@@ -100,7 +100,8 @@
                 <video muted="muted" id="video"></video>
                 <canvas id="canvas" style="display: none;"></canvas>
                 <canvas id="signaturePictureCanvas" width="400" height="200" style="border:2px solid black"></canvas>
-                <br />
+				<br />
+                
                 <select name="deviceList" id="deviceList"></select>
                 Line width : <select id="selWidth">
                     <option value="1" selected="selected">1</option>
@@ -112,8 +113,9 @@
                     <option value="gray">Gris</option>
                     <option value="blue" selected="selected">Azul</option>
                 </select>
+				<button class="btn btn-primary btn-lg ligth-text" onclick="javascript:clearArea();return false;"><i class="fas fa-file-signature"></i>Borrar firma</button>
                 <br /><br />
-                <button onclick="javascript:clearArea();return false;">Borrar firma</button>
+                
             </div>
         </div>
     </form>

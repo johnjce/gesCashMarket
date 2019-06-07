@@ -37,7 +37,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Acciones:</h6>
             <a class="collapse-item" href="<?php echo $helper->url("Customer", "createCustomer"); ?>"><i class="fas fa-user-plus"></i> Crear Cliente</a>
-            <a class="collapse-item" href="<?php echo $helper->url("Customer", "SeeCustomers"); ?>"><i class="fas fa-address-book"></i> Ver Clientes</a>
+            <a class="collapse-item" href="<?php echo $helper->url("Customer", "seeCustomers"); ?>"><i class="fas fa-address-book"></i> Ver Clientes</a>
           </div>
         </div>
       </li>
@@ -64,7 +64,7 @@
         <div id="collapseList" class="collapse" aria-labelledby="collapseList" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">listas:</h6>
-            <a class="collapse-item" href="<?php echo $helper->url("Purchase", "SeePurchases"); ?>"><i class="fas fa-copy"></i> Contratos de compras</a>
+            <a class="collapse-item" href="<?php echo $helper->url("Purchase", "seePurchases"); ?>"><i class="fas fa-copy"></i> Contratos de compras</a>
           </div>
         </div>
       </li>

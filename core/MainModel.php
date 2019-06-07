@@ -22,7 +22,7 @@ class MainModel extends MainEntity {
                 }
             }elseif($query->num_rows==1){
                 if($row = $query->fetch_object()) {
-                    $resultSet=$row;
+                    $resultSet[]=$row;
                 }
             }else{
                 $resultSet=true;

@@ -64,7 +64,7 @@ class CustomerController extends MainController{
         $customers=new Customer($this->adapter);
         $allcustomers=$customers->getAll();
 
-        $this->view("SeeCustomers",array(
+        $this->view("seeCustomers",array(
             "allcustomers"=>$allcustomers
         ));
     }

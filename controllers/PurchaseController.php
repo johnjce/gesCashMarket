@@ -49,7 +49,7 @@ class PurchaseController extends MainController {
         foreach($allPurchases as $purchase){
             array_push($allProducts,$purchases->getProductsById($purchase->id));
         }
-        $this->view("SeePurchases", array(
+        $this->view("seePurchases", array(
             "allPurchases" => $allPurchases,
             "allProducts" => $allProducts,
         ));

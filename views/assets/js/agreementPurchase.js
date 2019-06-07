@@ -16,8 +16,9 @@ function checkInput(idInput) {
 }
 
 function checkInputNumber(idInput) {
-    var patt = new RegExp("[^0-9]");
-    return checkInput(idInput) ? !patt.test($(idInput).val()) : false;
+	return true;
+    /*var patt = /\d*(\.\d{1})?\d{0,1}/;
+    return checkInput(idInput) ? !patt.test($(idInput).val()) : false;*/
 }
 
 function delRow(idA, id) {
@@ -78,7 +79,11 @@ document.querySelector("#buttonAddAgreement").addEventListener("click", function
     agreementPurchase.forEach(toString);
     postProducts = postProducts.substring(0, postProducts.length - 1);
     postProducts += "}";
-    var posting = $.post("./index.php?controller=Purchase&action=addAgreement", { "products": postProducts, "IDCL": $("#IDCL").val() });
+    var posting = $.post("./index.php?controller=Purchase&action=addAgreement", 
+						 { 
+							"products": postProducts, 
+							"IDCL": $("#IDCL").val()
+						 });
     posting.done(function (data) {
         $("#inputSearch").val("");
         document.querySelector('#customersResult').innerHTML = "";

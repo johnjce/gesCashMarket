@@ -49,7 +49,11 @@
 })(jQuery); // End of use strict
 function printDocument(divId) {
   var ventana = window.open("", "", "");
-  var contenido = "<body onload='window.print();window.close();'>";
+  var contenido = "<head>"+
+	  			"<link href='https://cashmarkets.es/views/assets/css/sb-admin-2.css' rel='stylesheet'>"+
+	  			"<link href='https://cashmarkets.es/views/assets/vendor/fontawesome-free/css/all.min.css' rel='stylesheet' type='text/css'>"+
+  				"<link href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i' rel='stylesheet'>"+
+	  			"</head><body onload='window.print();window.close();'>";
   contenido = contenido + document.getElementById(divId).innerHTML + "</body></html>";
   ventana.document.open();
   ventana.document.write(contenido);

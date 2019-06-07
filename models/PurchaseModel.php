@@ -19,7 +19,6 @@ class PurchaseModel extends MainModel {
         $query = "INSERT INTO products (make, model, sn, type, pricePurchase, priceSale, stock, productState, state, idPurchase,currentAgreement)
                 VALUES";
         foreach($products as $product){
-            print_r($product);
             $query .="('{$product->getMake()}',
                        '{$product->getModel()}',
                        '{$product->getSn()}',
@@ -29,9 +28,10 @@ class PurchaseModel extends MainModel {
                        '{$product->getStock()}',
                        '{$product->getState()}',
                        '100',
-                       '{$lastId->id}',
-                       '{$lastId->id}'),"; 
+                       '{$lastId[0]->id}',
+                       '{$lastId[0]->id}'),"; 
         }
+		print_r($query);
         $query = substr ($query, 0, strlen($query) - 1);
         return $product->db()->query($query);
     }
