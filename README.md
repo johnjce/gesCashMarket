@@ -1,10 +1,10 @@
 # gesCashMarket
 
 ### Tech
-![alt text](https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg)
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Mysql-dolphin-square.svg/768px-Mysql-dolphin-square.svg.png)
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/JQuery_logo_text.svg/1280px-JQuery_logo_text.svg.png)
-![alt text](https://upload.wikimedia.org/wikipedia/commons/d/dc/Javascript-shield.png)
+<img width="200" alt="php" src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg">
+<img width="200" alt="mysql" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Mysql-dolphin-square.svg/768px-Mysql-dolphin-square.svg.png">
+<img width="200" alt="jQuery" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/JQuery_logo_text.svg/1280px-JQuery_logo_text.svg.png">
+<img width="200" alt="JavaScript" src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Javascript-shield.png">
 
 ### Installation
 
