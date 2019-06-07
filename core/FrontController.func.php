@@ -5,8 +5,7 @@ function LoadController($controller){
     $strFileController='controllers/'.$controller.'.php';
     
     if(!is_file($strFileController)){
-        $strFileController='controllers/'.ucwords(DEFAULT_CONTROLLER).'Controller.php';   
-        
+        $strFileController='controllers/'.ucwords(DEFAULT_CONTROLLER).'Controller.php';
     }
     require_once $strFileController;
     return new $controller();

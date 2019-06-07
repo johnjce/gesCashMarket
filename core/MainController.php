@@ -18,8 +18,10 @@ class MainController {
         require_once 'core/ViewsHelper.php';
         $helper = new ViewsHelper();
         require_once "views/baseTemplate/header.php";
-        require_once "views/baseTemplate/leftBar.php";
-        require_once "views/baseTemplate/topBar.php";
+        if($view!="login"){
+            require_once "views/baseTemplate/leftBar.php";
+            require_once "views/baseTemplate/topBar.php";
+        }
         require_once 'views/' . $view . 'View.php';
         require_once "views/baseTemplate/footer.php";
     }

@@ -1,20 +1,20 @@
 <?php
 class Connect {
     private $driver;
-    private $host, $user, $pass, $database, $charset;
+    private $host, $conUser, $conPass, $database, $charset;
 
     public function __construct() {
         $db_cfg = require_once 'config/database.php';
         $this->driver = $db_cfg["driver"];
         $this->host = $db_cfg["host"];
-        $this->user = $db_cfg["user"];
-        $this->pass = $db_cfg["pass"];
+        $this->conUser = $db_cfg["user"];
+        $this->conPass = $db_cfg["pass"];
         $this->database = $db_cfg["database"];
         $this->charset = $db_cfg["charset"];
     }
     
     public function connection() {
-        $con = new mysqli($this->host, $this->user, $this->pass, $this->database);
+        $con = new mysqli($this->host, $this->conUser, $this->conPass, $this->database);
         if ($con->connect_errno) {
             echo "Fallo al conectar a MySQL: (" . $con->connect_errno . ") " . $con->connect_error;
         }

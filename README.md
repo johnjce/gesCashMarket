@@ -1,6 +1,29 @@
-    config: aquí irán los ficheros de configuración de la base de datos, globales, etc.
-    controllers: como sabemos en la arquitectura MVC los controladores se encargarán de recibir y filtrar datos que le llegan de las vistas, llamar a los modelos y pasar los datos de estos a las vistas. Pues en este directorio colocaremos los controladores
-    core: aquí colocaremos las clases base de las que heredarán por ejemplo controladores y modelos, y también podríamos colocar más librerías hechas por nosotros o por terceros, esto sería el núcleo del framework.
-    models: aquí irán los modelos, para ser fieles al paradigma orientado objetos tenemos que tener una clase por cada tabla o entidad de la base de datos(excepto para las tablas pivote) y estas clases servirán para crear objetos de ese tipo de entidad(por ejemplo crear un objeto client para crear un client en la BD). También tendremos modelos de consulta a la BD que contendrán consultas más complejas que estén relacionadas con una o varias entidades.
-    views: aquí iran las vistas, es decir, donde se imprimirán los datos y lo que verá el client.
-    index.php será el controlador frontal por el que pasará absolutamente todo en la aplicación.
+# gesCashMarket
+
+### Tech
+![alt text](https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg)
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Mysql-dolphin-square.svg/768px-Mysql-dolphin-square.svg.png)
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/JQuery_logo_text.svg/1280px-JQuery_logo_text.svg.png)
+![alt text](https://upload.wikimedia.org/wikipedia/commons/d/dc/Javascript-shield.png)
+
+### Installation
+
+para bajar la app:
+en consola,
+```sh
+git clone https://github.com/johnjce/gesCashMarket.git
+```
+```
+Cambie los datos de configuracion de la base de datos.
+config->database.php
+
+cree una base de datos y ejecute en consulta SQL el contenido del fichero:
+config->startDb.sql
+```
+
+### Estructura de ficheros en la app
+
+ ## File Structure
+ ```
+ Pendiente de realizar
+ ```
